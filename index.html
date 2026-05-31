@@ -3,241 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Wise | 人に依存しない業務設計×AI</title>
+  <title>AI Wise｜製造業・建設業専門 AI活用×業務改善</title>
+  <meta name="description" content="AI Wiseは、製造業・建設業向けにAI活用と業務改善で残業削減、技術継承、データ整理、報告書作成、議事録作成を支援します。" />
   <style>
     :root {
-      --bg: #f5f9ff;
-      --card: #ffffff;
-      --text: #16324f;
-      --muted: #5c728a;
-      --primary: #2f6fed;
-      --primary-dark: #1f56c2;
-      --line: #dce7f7;
+      --navy:#1a2744; --navy2:#243354; --accent:#e8842a; --accent2:#f5a55a;
+      --bg:#f8f7f5; --card:#fff; --text:#2c2820; --muted:#6b6258; --line:#ede9e3;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      color: var(--text);
-      background: linear-gradient(180deg, #eef5ff 0%, #ffffff 100%);
-      line-height: 1.7;
-    }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { width: min(1100px, 92%); margin: 0 auto; }
-    header {
-      padding: 72px 0 56px;
-      background: radial-gradient(circle at top right, #d9e8ff 0%, #eef5ff 35%, #f8fbff 70%);
-      border-bottom: 1px solid var(--line);
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 32px;
-      align-items: center;
-    }
-    .badge {
-      display: inline-block;
-      background: #e7f0ff;
-      color: var(--primary-dark);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-    h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1.15;
-      margin: 0 0 18px;
-    }
-    .lead {
-      font-size: 18px;
-      color: var(--muted);
-      margin: 0 0 24px;
-    }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 700;
-      border: 1px solid transparent;
-    }
-    .btn-primary { background: var(--primary); color: #fff; }
-    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
-    .btn-secondary {
-      background: #fff;
-      border-color: var(--line);
-      color: var(--text);
-    }
-    .panel {
-      background: rgba(255,255,255,0.8);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: 0 20px 60px rgba(47,111,237,0.08);
-    }
-    .panel h3 { margin-top: 0; margin-bottom: 12px; }
-    section { padding: 68px 0; }
-    .section-title {
-      font-size: 32px;
-      margin: 0 0 14px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 auto 36px;
-      max-width: 760px;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 10px 30px rgba(22,50,79,0.04);
-    }
-    .card h3 { margin-top: 0; }
-    .price {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin: 12px 0;
-    }
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    .step {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-    .step-num {
-      display: inline-block;
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      line-height: 34px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .contact-box {
-      background: linear-gradient(180deg, #2f6fed 0%, #1f56c2 100%);
-      color: #fff;
-      padding: 32px;
-      border-radius: 24px;
-      text-align: center;
-    }
-    .contact-box a { color: #fff; text-decoration: underline; }
-    footer {
-      padding: 28px 0 40px;
-      border-top: 1px solid var(--line);
-      background: #fff;
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-    .small { color: var(--muted); font-size: 14px; text-align: center; }
-    ul { padding-left: 18px; }
-    @media (max-width: 900px) {
-      .hero, .cards, .flow { grid-template-columns: 1fr; }
-      header { padding-top: 54px; }
-    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--text);line-height:1.85;background:#fff} a{text-decoration:none;color:inherit}.container{width:min(1100px,92%);margin:0 auto}.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:800;padding:15px 26px;border-radius:8px;box-shadow:0 10px 28px rgba(232,132,42,.28)}.btn:hover{background:var(--accent2)}.btn.sub{background:#fff;color:var(--navy);border:1px solid rgba(255,255,255,.35);box-shadow:none}.badge{display:inline-block;background:rgba(232,132,42,.16);border:1px solid rgba(232,132,42,.45);color:var(--accent2);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:700;letter-spacing:.06em}.hero{background:radial-gradient(circle at 80% 20%,rgba(232,132,42,.16),transparent 35%),linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:86px 0 72px}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:center}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.28;margin:18px 0 18px}.hero h1 em{font-style:normal;color:var(--accent2)}.lead{font-size:18px;color:rgba(255,255,255,.78);margin:0 0 28px}.cta-row{display:flex;gap:14px;flex-wrap:wrap}.hero-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px}.hero-panel h3{margin-top:0;color:#fff}.hero-panel li{margin:8px 0;color:rgba(255,255,255,.82)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px}.stat strong{display:block;font-size:28px;color:#fff}.stat span{font-size:13px;color:rgba(255,255,255,.62)}section{padding:72px 0}.section-label{text-align:center;color:var(--accent);font-weight:800;font-size:13px;letter-spacing:.12em}.section-title{text-align:center;color:var(--navy);font-size:clamp(26px,4vw,40px);line-height:1.45;margin:10px 0 14px}.section-sub{text-align:center;color:var(--muted);max-width:780px;margin:0 auto 34px}.bg{background:var(--bg)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 28px rgba(26,39,68,.06)}.card h3{color:var(--navy);margin-top:0}.card ul{padding-left:20px}.price{font-size:26px;font-weight:900;color:var(--accent);margin:12px 0}.pain{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.pain-item{background:#fff;border-left:5px solid var(--accent);border-radius:12px;padding:16px 18px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.message{background:var(--navy);color:#fff;border-radius:20px;padding:32px;margin-top:34px}.message strong{color:var(--accent2)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.step-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:10px}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.result{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center}.result b{display:block;color:var(--navy);margin-bottom:8px}.result .before{color:#999;text-decoration:line-through}.result .after{display:block;font-size:25px;color:var(--accent);font-weight:900}.profile{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:center}.profile-card{background:var(--navy);color:#fff;border-radius:22px;padding:28px}.profile-card .avatar{width:78px;height:78px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:28px;font-weight:900;margin-bottom:14px}.tag{display:inline-block;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;font-size:12px;margin:4px}.cta{background:linear-gradient(135deg,var(--accent),#d66e15);color:#fff;text-align:center}.cta h2{font-size:clamp(28px,4vw,42px);line-height:1.4;margin:0 0 16px}.cta p{max-width:720px;margin:0 auto 26px;color:rgba(255,255,255,.88)}.cta .btn{background:#fff;color:var(--navy)}footer{background:var(--navy);color:rgba(255,255,255,.65);padding:28px 0;text-align:center;font-size:14px}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}footer a{color:#fff;text-decoration:underline}@media(max-width:900px){.hero-grid,.cards,.flow,.result-grid,.profile,.pain{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:54px}.btn{width:100%;text-align:center}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container hero">
+  <header class="hero">
+    <div class="container hero-grid">
       <div>
-        <div class="badge">四国発・現場AI講師 / AI Wise</div>
-        <h1>AIを教えません。<br>あなた専用のAIを作ります。</h1>
-        <p class="lead">
-          人に依存しない業務設計×AIで、現場のムダ・属人化・手戻りを減らす。
-          小さく始めて、すぐ効く形で導入を支援します。
-        </p>
+        <div class="badge">製造業・建設業専門｜AI活用 × 業務改善</div>
+        <h1>残業を減らし、<br><em>利益を生み出す現場</em>へ。</h1>
+        <p class="lead">報告書作成、測定データ整理、会議議事録、マニュアル作成をAIと仕組み化で改善。現場経験25年以上の視点で、会社の残業削減を支援します。</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">LINEで相談する</a>
-          <a class="btn btn-secondary" href="#services">サービスを見る</a>
+          <a class="btn" href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">無料AI業務診断を受ける</a>
+          <a class="btn sub" href="#services">サービスを見る</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>25年以上</strong><span>製造業の現場経験</span></div>
+          <div class="stat"><strong>0円</strong><span>初回AI業務診断</span></div>
+          <div class="stat"><strong>1業務〜</strong><span>小さく導入可能</span></div>
         </div>
       </div>
-      <div class="panel">
-        <h3>こんな悩みに対応</h3>
+      <div class="hero-panel">
+        <h3>このような会社を支援します</h3>
         <ul>
-          <li>担当者しか分からない仕事を減らしたい</li>
-          <li>Excel集計や報連相をもっと早くしたい</li>
-          <li>AIを入れたいが、何から始めればいいか分からない</li>
-          <li>現場が嫌がらない形で定着させたい</li>
+          <li>残業が多く、社員の負担が大きい</li>
+          <li>報告書・議事録・Excel集計に時間がかかる</li>
+          <li>ベテランしか分からない業務がある</li>
+          <li>AIを導入したいが何から始めればよいか分からない</li>
         </ul>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="services">
+    <section class="bg" id="pain">
       <div class="container">
-        <h2 class="section-title">サービス</h2>
-        <p class="section-sub">AI導入の前に、まず現場に合う形へ整理。導入して終わりではなく、定着まで伴走します。</p>
+        <div class="section-label">PROBLEM</div>
+        <h2 class="section-title">社員が頑張っているのに、<br>なぜ残業は減らないのでしょうか？</h2>
+        <p class="section-sub">問題は社員の能力ではなく、業務の流れや情報共有の仕組みにあるかもしれません。</p>
+        <div class="pain">
+          <div class="pain-item">報告書作成に毎日1〜2時間かかる</div>
+          <div class="pain-item">測定結果をExcelへ手動で転記している</div>
+          <div class="pain-item">会議議事録の作成が負担になっている</div>
+          <div class="pain-item">マニュアルや教育資料が整備されていない</div>
+          <div class="pain-item">人手不足で改善活動まで手が回らない</div>
+          <div class="pain-item">技術継承が進まず、属人化している</div>
+        </div>
+        <div class="message">AI導入が目的ではありません。<strong>現場が回る仕組みを作ること</strong>が目的です。</div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-label">RESULT</div>
+        <h2 class="section-title">まずは時間がかかる業務から改善</h2>
+        <p class="section-sub">小さく始めて、効果が見えた業務から横展開します。</p>
+        <div class="result-grid">
+          <div class="result"><b>報告書作成</b><span class="before">60分</span><span class="after">10分へ</span></div>
+          <div class="result"><b>会議議事録</b><span class="before">30分</span><span class="after">3分へ</span></div>
+          <div class="result"><b>測定データ整理</b><span class="before">120分</span><span class="after">15分へ</span></div>
+          <div class="result"><b>マニュアル作成</b><span class="before">3日</span><span class="after">半日へ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg" id="services">
+      <div class="container">
+        <div class="section-label">SERVICE</div>
+        <h2 class="section-title">サービス内容</h2>
+        <p class="section-sub">無料診断から始め、1業務のスポット支援、その後の継続支援まで段階的に対応します。</p>
         <div class="cards">
           <article class="card">
-            <h3>AI導入相談</h3>
-            <p>現状ヒアリングを通じて、どこにAIを入れると効果が出やすいかを整理します。</p>
-            <div class="price">¥9,800〜</div>
-            <p>初回相談 / 課題整理 / 導入優先順位の提案</p>
+            <h3>無料AI業務診断</h3>
+            <p>現在の業務をヒアリングし、AIで改善できるポイントを整理します。</p>
+            <div class="price">0円</div>
+            <ul><li>30分ヒアリング</li><li>改善ポイント整理</li><li>優先順位の提案</li></ul>
           </article>
           <article class="card">
-            <h3>業務仕組み化サポート</h3>
-            <p>属人業務を見える化し、AIやテンプレ、運用ルールまで含めて再設計します。</p>
-            <div class="price">¥49,800〜</div>
-            <p>手順整理 / テンプレ作成 / 運用導線の設計</p>
+            <h3>AI業務改善スポット支援</h3>
+            <p>まず1つの業務を対象に、現場で使える形まで整えます。</p>
+            <div class="price">98,000円</div>
+            <ul><li>業務フロー設計</li><li>プロンプト・テンプレ作成</li><li>操作説明・初期運用支援</li></ul>
           </article>
           <article class="card">
-            <h3>継続伴走プラン</h3>
-            <p>導入後の改善、現場定着、質問対応まで含めて継続支援します。</p>
-            <div class="price">個別見積</div>
-            <p>月次伴走 / 改善提案 / 社内向け説明サポート</p>
+            <h3>継続支援プラン</h3>
+            <p>改善を一度きりで終わらせず、社内定着まで伴走します。</p>
+            <div class="price">29,800円/月〜</div>
+            <ul><li>ライト：月1回相談</li><li>スタンダード：月2回相談</li><li>LINE相談・改善提案</li></ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="flow">
       <div class="container">
+        <div class="section-label">FLOW</div>
         <h2 class="section-title">導入の流れ</h2>
         <div class="flow">
-          <div class="step"><div class="step-num">1</div><strong>相談</strong><p>LINEまたはメールで現状を共有。</p></div>
-          <div class="step"><div class="step-num">2</div><strong>ヒアリング</strong><p>業務の流れや困りごとを整理。</p></div>
-          <div class="step"><div class="step-num">3</div><strong>提案</strong><p>最小コストで始められる形を提案。</p></div>
-          <div class="step"><div class="step-num">4</div><strong>導入</strong><p>必要に応じてテンプレや仕組みを実装。</p></div>
+          <div class="step"><div class="step-num">1</div><strong>LINE登録</strong><p>公式LINEから無料診断へ。</p></div>
+          <div class="step"><div class="step-num">2</div><strong>無料診断</strong><p>現状業務と課題を確認。</p></div>
+          <div class="step"><div class="step-num">3</div><strong>提案書提出</strong><p>改善案と費用を提示。</p></div>
+          <div class="step"><div class="step-num">4</div><strong>スポット支援</strong><p>1業務から小さく改善。</p></div>
+          <div class="step"><div class="step-num">5</div><strong>継続支援</strong><p>効果が出た業務を横展開。</p></div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="contact-box">
-          <h2>お問い合わせ</h2>
-          <p>AI導入、業務効率化、仕組み化の相談はこちらから。</p>
-          <p>
-            LINE：<a href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">https://lin.ee/wFVwRAm</a><br>
-            メール：<a href="mailto:beetnin854@gmail.com">beetnin854@gmail.com</a><br>
-            Facebook：<a href="https://www.facebook.com/share/17i267vgQr/" target="_blank" rel="noopener">プロフィールを見る</a>
-          </p>
+    <section class="bg" id="profile">
+      <div class="container profile">
+        <div class="profile-card">
+          <div class="avatar">瀬</div>
+          <h3>瀬川 友和</h3>
+          <p>AI Wise代表<br>製造業歴25年以上 / 現役製造技術職</p>
+          <span class="tag">徳島県徳島市</span><span class="tag">製造技術</span><span class="tag">AI活用</span><span class="tag">業務改善</span>
         </div>
+        <div>
+          <div class="section-label" style="text-align:left">MISSION</div>
+          <h2 class="section-title" style="text-align:left">家族との時間を取り戻せる職場を増やす。</h2>
+          <p>25年勤めている会社で、残業が原因で平日に子どもとの時間を作れない同僚をたくさん見てきました。AIや業務改善によって、少しでも早く帰れる会社を増やしたい。それがAI Wiseの原点です。</p>
+          <p><strong>世界と戦える町工場をつくる。</strong><br>そのために、製造業・建設業の現場に合ったAI活用を支援します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>まずは無料AI業務診断から</h2>
+        <p>報告書、議事録、データ整理、マニュアル作成など、今の業務のどこから改善すれば効果が出るかを一緒に整理します。</p>
+        <a class="btn" href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">LINEで無料診断を申し込む</a>
       </div>
     </section>
   </main>
@@ -249,7 +149,7 @@
         <a href="mailto:beetnin854@gmail.com">お問い合わせ</a>
         <a href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">LINE相談</a>
       </div>
-      <div class="small">© AI Wise. All Rights Reserved.</div>
+      <div>© AI Wise. All Rights Reserved.</div>
     </div>
   </footer>
 </body>
