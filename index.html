@@ -1,156 +1,245 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Wise｜製造業・建設業専門 AI活用×業務改善</title>
-  <meta name="description" content="AI Wiseは、製造業・建設業向けにAI活用と業務改善で残業削減、技術継承、データ整理、報告書作成、議事録作成を支援します。" />
-  <style>
-    :root {
-      --navy:#1a2744; --navy2:#243354; --accent:#e8842a; --accent2:#f5a55a;
-      --bg:#f8f7f5; --card:#fff; --text:#2c2820; --muted:#6b6258; --line:#ede9e3;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--text);line-height:1.85;background:#fff} a{text-decoration:none;color:inherit}.container{width:min(1100px,92%);margin:0 auto}.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:800;padding:15px 26px;border-radius:8px;box-shadow:0 10px 28px rgba(232,132,42,.28)}.btn:hover{background:var(--accent2)}.btn.sub{background:#fff;color:var(--navy);border:1px solid rgba(255,255,255,.35);box-shadow:none}.badge{display:inline-block;background:rgba(232,132,42,.16);border:1px solid rgba(232,132,42,.45);color:var(--accent2);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:700;letter-spacing:.06em}.hero{background:radial-gradient(circle at 80% 20%,rgba(232,132,42,.16),transparent 35%),linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:86px 0 72px}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:center}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.28;margin:18px 0 18px}.hero h1 em{font-style:normal;color:var(--accent2)}.lead{font-size:18px;color:rgba(255,255,255,.78);margin:0 0 28px}.cta-row{display:flex;gap:14px;flex-wrap:wrap}.hero-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px}.hero-panel h3{margin-top:0;color:#fff}.hero-panel li{margin:8px 0;color:rgba(255,255,255,.82)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px}.stat strong{display:block;font-size:28px;color:#fff}.stat span{font-size:13px;color:rgba(255,255,255,.62)}section{padding:72px 0}.section-label{text-align:center;color:var(--accent);font-weight:800;font-size:13px;letter-spacing:.12em}.section-title{text-align:center;color:var(--navy);font-size:clamp(26px,4vw,40px);line-height:1.45;margin:10px 0 14px}.section-sub{text-align:center;color:var(--muted);max-width:780px;margin:0 auto 34px}.bg{background:var(--bg)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 28px rgba(26,39,68,.06)}.card h3{color:var(--navy);margin-top:0}.card ul{padding-left:20px}.price{font-size:26px;font-weight:900;color:var(--accent);margin:12px 0}.pain{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.pain-item{background:#fff;border-left:5px solid var(--accent);border-radius:12px;padding:16px 18px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.message{background:var(--navy);color:#fff;border-radius:20px;padding:32px;margin-top:34px}.message strong{color:var(--accent2)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.step-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:10px}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.result{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center}.result b{display:block;color:var(--navy);margin-bottom:8px}.result .before{color:#999;text-decoration:line-through}.result .after{display:block;font-size:25px;color:var(--accent);font-weight:900}.profile{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:center}.profile-card{background:var(--navy);color:#fff;border-radius:22px;padding:28px}.profile-card .avatar{width:78px;height:78px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:28px;font-weight:900;margin-bottom:14px}.tag{display:inline-block;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;font-size:12px;margin:4px}.cta{background:linear-gradient(135deg,var(--accent),#d66e15);color:#fff;text-align:center}.cta h2{font-size:clamp(28px,4vw,42px);line-height:1.4;margin:0 0 16px}.cta p{max-width:720px;margin:0 auto 26px;color:rgba(255,255,255,.88)}.cta .btn{background:#fff;color:var(--navy)}footer{background:var(--navy);color:rgba(255,255,255,.65);padding:28px 0;text-align:center;font-size:14px}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}footer a{color:#fff;text-decoration:underline}@media(max-width:900px){.hero-grid,.cards,.flow,.result-grid,.profile,.pain{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:54px}.btn{width:100%;text-align:center}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Wise｜AI業務改善・AIグラレコ・自動化サポート</title>
+<meta name="description" content="AI Wiseは法人・個人向けにAI活用、業務改善、AIグラレコ、会議時間短縮、LINE診断、自動化設計を支援します。" />
+<style>
+:root{--navy:#192744;--navy2:#24365f;--orange:#f08a24;--orange2:#ffad57;--bg:#f8f5ef;--paper:#fffaf1;--line:#e6d8c5;--text:#1f2937;--muted:#667085;--green:#06c755;--blue:#eaf5ff;--red:#fff0f0;--yellow:#fff4c4;--purple:#efe7ff;--shadow:0 14px 36px rgba(25,39,68,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--text);background:#fff;line-height:1.8}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:0 auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(25,39,68,.96);backdrop-filter:blur(8px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}.topbar-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:900;font-size:22px;letter-spacing:.04em}.brand span{color:var(--orange2)}.nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.nav button,.nav a{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer}.nav button.active{background:#fff;color:var(--navy)}.hero{background:radial-gradient(circle at 80% 10%,rgba(240,138,36,.2),transparent 34%),linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:76px 0 60px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}.badge{display:inline-block;color:var(--orange2);background:rgba(240,138,36,.16);border:1px solid rgba(240,138,36,.45);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:900;letter-spacing:.08em}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.28;margin:18px 0}.hero h1 em{font-style:normal;color:var(--orange2);border-bottom:3px solid var(--orange)}.lead{font-size:18px;color:rgba(255,255,255,.82);margin:0 0 26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:#fff;border:0;border-radius:12px;padding:15px 24px;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 12px 28px rgba(240,138,36,.30)}.btn:hover{background:var(--orange2)}.btn.line{background:var(--green)}.btn.sub{background:#fff;color:var(--navy);box-shadow:none;border:1px solid rgba(25,39,68,.14)}.btn.dark{background:var(--navy)}.cta-row{display:flex;gap:12px;flex-wrap:wrap}.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px;box-shadow:var(--shadow)}.hero-card h3{margin:0 0 10px;color:#fff}.hero-card li{margin:8px 0;color:rgba(255,255,255,.82)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:15px}.stat strong{display:block;font-size:26px;color:#fff}.stat span{font-size:12px;color:rgba(255,255,255,.66)}section{padding:70px 0}.section-label{text-align:center;color:var(--orange);font-weight:900;letter-spacing:.14em;font-size:13px}.section-title{text-align:center;color:var(--navy);font-size:clamp(26px,4vw,40px);line-height:1.45;margin:8px 0 12px}.section-sub{text-align:center;color:var(--muted);max-width:820px;margin:0 auto 30px}.bg{background:var(--bg)}.result-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}.result{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center;box-shadow:0 8px 20px rgba(25,39,68,.05)}.result b{display:block;color:var(--navy);margin-bottom:8px}.before{display:block;color:#9b9b9b;text-decoration:line-through}.after{display:block;color:var(--orange);font-size:26px;font-weight:900;line-height:1.2}.tab-section{background:#fff;padding-top:40px}.tabs-wrap{position:sticky;top:68px;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 0}.tabs{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}.tab-btn{background:#fff;border:1px solid var(--line);border-radius:999px;padding:13px 28px;font-size:17px;font-weight:900;color:var(--navy);cursor:pointer;box-shadow:0 4px 12px rgba(25,39,68,.04)}.tab-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}.tab-panel{display:none;padding:56px 0 20px}.tab-panel.active{display:block}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}.card h3{color:var(--navy);margin:0 0 10px}.card ul{padding-left:20px}.price{font-size:25px;color:var(--orange);font-weight:900;margin:12px 0}.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.pain{background:#fff;border-left:5px solid var(--orange);border-radius:14px;padding:16px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}.step-num{width:36px;height:36px;background:var(--orange);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:900;margin-bottom:8px}.grareco-hero{background:var(--navy);color:#fff;border-radius:0;padding:60px 0}.grareco-hero .section-label{text-align:left;color:var(--orange2)}.grareco-hero h2{font-size:clamp(30px,4vw,46px);line-height:1.45;margin:10px 0}.grareco-hero p{font-size:18px;color:rgba(255,255,255,.82);max-width:920px}.grareco-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.app-preview{background:var(--paper);border:3px solid #9a8058;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-top:28px}.app-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fbf3e4;border-bottom:3px solid #9a8058;padding:12px 16px;flex-wrap:wrap}.app-title{font-size:26px;font-weight:900;color:#111}.app-title small{font-size:14px;color:#6b5a42;margin-left:8px}.app-buttons{display:flex;gap:8px;flex-wrap:wrap}.mini-btn{border:2px solid #9a8058;background:#fffaf1;border-radius:10px;padding:8px 12px;font-weight:900;box-shadow:2px 3px 0 rgba(154,128,88,.3)}.mini-btn.pink{background:#ffdbe4}.purpose{display:flex;gap:10px;align-items:center;background:#fbf3e4;border-bottom:2px dashed #9a8058;padding:10px 16px}.purpose b{font-size:20px}.purpose-box{flex:1;background:#fffaf1;border:2px solid #9a8058;border-radius:14px;padding:10px 14px;font-size:19px}.app-body{display:grid;grid-template-columns:1fr 330px;min-height:520px}.board{position:relative;background-color:#f7efe1;background-image:linear-gradient(rgba(154,128,88,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(154,128,88,.12) 1px,transparent 1px);background-size:24px 24px;padding:28px;overflow:hidden}.node{position:absolute;border-radius:18px;padding:12px 20px;font-weight:900;text-align:center;box-shadow:4px 6px 0 rgba(0,0,0,.18);border:3px solid}.node.main{left:32%;top:58px;background:#fff2a9;border-color:#d5a114;font-size:30px;min-width:260px}.node.blue{background:#d8f0ff;border-color:#5ba9dc}.node.red{background:#ffe2e2;border-color:#df7a7a}.node.yellow{background:#fff3be;border-color:#d9a72e}.node.green{background:#e5f6e9;border-color:#66b879}.node.purple{background:#e9ddff;border-color:#9a75d9}.n1{left:7%;top:190px}.n2{left:31%;top:190px}.n3{left:56%;top:190px}.n4{left:80%;top:190px}.n5{left:4%;top:310px}.n6{left:30%;top:310px}.n7{left:51%;top:310px}.n8{left:78%;top:310px}.line{position:absolute;height:5px;background:#a89572;transform-origin:left center;opacity:.75}.l1{left:50%;top:132px;width:220px;transform:rotate(158deg)}.l2{left:50%;top:132px;width:135px;transform:rotate(156deg)}.l3{left:50%;top:132px;width:170px;transform:rotate(20deg)}.l4{left:50%;top:132px;width:300px;transform:rotate(13deg)}.summary{border-left:3px solid #9a8058;background:#fbf3e4;padding:20px;overflow:auto}.summary h3{font-size:24px;margin:0 0 10px;border-bottom:3px solid #9a8058}.sum-card{background:#fffaf1;border:2px solid #9a8058;border-radius:16px;padding:14px;margin:12px 0}.sum-card h4{font-size:20px;margin:0 0 6px}.app-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#fbf3e4;border-top:3px solid #9a8058;padding:12px 16px}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}.feature{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(25,39,68,.06)}.feature b{display:block;color:var(--navy);font-size:18px}.cta{background:linear-gradient(135deg,var(--orange),#d66e15);color:#fff;text-align:center}.cta h2{font-size:clamp(28px,4vw,42px);margin:0 0 14px}.cta p{color:rgba(255,255,255,.9);max-width:760px;margin:0 auto 24px}.law-link{display:inline-block;margin-top:18px;color:#fff;text-decoration:underline;font-weight:800}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;align-items:center;justify-content:center;padding:20px}.modal.active{display:flex}.modal-box{background:#fff;border-radius:20px;max-width:840px;max-height:86vh;overflow:auto;padding:26px;color:var(--text)}.modal-box h2{color:var(--navy)}.law-table{width:100%;border-collapse:collapse}.law-table th,.law-table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}.law-table th{width:220px;background:var(--bg)}footer{background:var(--navy);color:rgba(255,255,255,.7);text-align:center;padding:28px 0}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}footer button{background:none;border:0;color:#fff;text-decoration:underline;cursor:pointer;font:inherit}@media(max-width:960px){.hero-grid,.cards,.flow,.result-grid,.pain-grid,.app-body,.feature-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.topbar-inner{height:auto;padding:12px 0;align-items:flex-start;flex-direction:column}.tabs-wrap{top:92px}.node{position:static;margin:12px auto}.line{display:none}.board{min-height:auto}.btn{width:100%}.nav{display:none}}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="badge">製造業・建設業専門｜AI活用 × 業務改善</div>
-        <h1>残業を減らし、<br><em>利益を生み出す現場</em>へ。</h1>
-        <p class="lead">報告書作成、測定データ整理、会議議事録、マニュアル作成をAIと仕組み化で改善。現場経験25年以上の視点で、会社の残業削減を支援します。</p>
-        <div class="cta-row">
-          <a class="btn" href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">無料AI業務診断を受ける</a>
-          <a class="btn sub" href="#services">サービスを見る</a>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>25年以上</strong><span>製造業の現場経験</span></div>
-          <div class="stat"><strong>0円</strong><span>初回AI業務診断</span></div>
-          <div class="stat"><strong>1業務〜</strong><span>小さく導入可能</span></div>
-        </div>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">AI <span>Wise</span></div>
+    <nav class="nav">
+      <button onclick="goTab('corp')">法人向け</button>
+      <button onclick="goTab('personal')">個人向け</button>
+      <button onclick="goTab('flow')">導入の流れ</button>
+      <button onclick="goTab('line')">LINE診断</button>
+      <button onclick="goTab('grareco')">AIグラレコ</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">法人・個人対応｜AI業務改善 × 自動化 × AIグラレコ</div>
+      <h1>残業を減らし、<br><em>人に依存しない仕組み</em>をつくる。</h1>
+      <p class="lead">報告書・測定データ・議事録・マニュアル・会議内容をAIで整理。1名の個人から100名規模の会社まで、小さく始めて現場に定着する形へ整えます。</p>
+      <div class="cta-row">
+        <button class="btn line" onclick="goTab('line')">LINEで無料診断</button>
+        <button class="btn sub" onclick="goTab('grareco')">AIグラレコを見る</button>
       </div>
-      <div class="hero-panel">
-        <h3>このような会社を支援します</h3>
-        <ul>
-          <li>残業が多く、社員の負担が大きい</li>
-          <li>報告書・議事録・Excel集計に時間がかかる</li>
-          <li>ベテランしか分からない業務がある</li>
-          <li>AIを導入したいが何から始めればよいか分からない</li>
-        </ul>
+      <div class="stats">
+        <div class="stat"><strong>1〜100名</strong><span>個人・小規模法人に対応</span></div>
+        <div class="stat"><strong>0円</strong><span>初回AI業務診断</span></div>
+        <div class="stat"><strong>1業務〜</strong><span>小さく導入可能</span></div>
       </div>
     </div>
-  </header>
-
-  <main>
-    <section class="bg" id="pain">
-      <div class="container">
-        <div class="section-label">PROBLEM</div>
-        <h2 class="section-title">社員が頑張っているのに、<br>なぜ残業は減らないのでしょうか？</h2>
-        <p class="section-sub">問題は社員の能力ではなく、業務の流れや情報共有の仕組みにあるかもしれません。</p>
-        <div class="pain">
-          <div class="pain-item">報告書作成に毎日1〜2時間かかる</div>
-          <div class="pain-item">測定結果をExcelへ手動で転記している</div>
-          <div class="pain-item">会議議事録の作成が負担になっている</div>
-          <div class="pain-item">マニュアルや教育資料が整備されていない</div>
-          <div class="pain-item">人手不足で改善活動まで手が回らない</div>
-          <div class="pain-item">技術継承が進まず、属人化している</div>
-        </div>
-        <div class="message">AI導入が目的ではありません。<strong>現場が回る仕組みを作ること</strong>が目的です。</div>
-      </div>
-    </section>
-
-    <section id="results">
-      <div class="container">
-        <div class="section-label">RESULT</div>
-        <h2 class="section-title">まずは時間がかかる業務から改善</h2>
-        <p class="section-sub">小さく始めて、効果が見えた業務から横展開します。</p>
-        <div class="result-grid">
-          <div class="result"><b>報告書作成</b><span class="before">60分</span><span class="after">10分へ</span></div>
-          <div class="result"><b>会議議事録</b><span class="before">30分</span><span class="after">3分へ</span></div>
-          <div class="result"><b>測定データ整理</b><span class="before">120分</span><span class="after">15分へ</span></div>
-          <div class="result"><b>マニュアル作成</b><span class="before">3日</span><span class="after">半日へ</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg" id="services">
-      <div class="container">
-        <div class="section-label">SERVICE</div>
-        <h2 class="section-title">サービス内容</h2>
-        <p class="section-sub">無料診断から始め、1業務のスポット支援、その後の継続支援まで段階的に対応します。</p>
-        <div class="cards">
-          <article class="card">
-            <h3>無料AI業務診断</h3>
-            <p>現在の業務をヒアリングし、AIで改善できるポイントを整理します。</p>
-            <div class="price">0円</div>
-            <ul><li>30分ヒアリング</li><li>改善ポイント整理</li><li>優先順位の提案</li></ul>
-          </article>
-          <article class="card">
-            <h3>AI業務改善スポット支援</h3>
-            <p>まず1つの業務を対象に、現場で使える形まで整えます。</p>
-            <div class="price">98,000円</div>
-            <ul><li>業務フロー設計</li><li>プロンプト・テンプレ作成</li><li>操作説明・初期運用支援</li></ul>
-          </article>
-          <article class="card">
-            <h3>継続支援プラン</h3>
-            <p>改善を一度きりで終わらせず、社内定着まで伴走します。</p>
-            <div class="price">29,800円/月〜</div>
-            <ul><li>ライト：月1回相談</li><li>スタンダード：月2回相談</li><li>LINE相談・改善提案</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="flow">
-      <div class="container">
-        <div class="section-label">FLOW</div>
-        <h2 class="section-title">導入の流れ</h2>
-        <div class="flow">
-          <div class="step"><div class="step-num">1</div><strong>LINE登録</strong><p>公式LINEから無料診断へ。</p></div>
-          <div class="step"><div class="step-num">2</div><strong>無料診断</strong><p>現状業務と課題を確認。</p></div>
-          <div class="step"><div class="step-num">3</div><strong>提案書提出</strong><p>改善案と費用を提示。</p></div>
-          <div class="step"><div class="step-num">4</div><strong>スポット支援</strong><p>1業務から小さく改善。</p></div>
-          <div class="step"><div class="step-num">5</div><strong>継続支援</strong><p>効果が出た業務を横展開。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg" id="profile">
-      <div class="container profile">
-        <div class="profile-card">
-          <div class="avatar">瀬</div>
-          <h3>瀬川 友和</h3>
-          <p>AI Wise代表<br>製造業歴25年以上 / 現役製造技術職</p>
-          <span class="tag">徳島県徳島市</span><span class="tag">製造技術</span><span class="tag">AI活用</span><span class="tag">業務改善</span>
-        </div>
-        <div>
-          <div class="section-label" style="text-align:left">MISSION</div>
-          <h2 class="section-title" style="text-align:left">家族との時間を取り戻せる職場を増やす。</h2>
-          <p>25年勤めている会社で、残業が原因で平日に子どもとの時間を作れない同僚をたくさん見てきました。AIや業務改善によって、少しでも早く帰れる会社を増やしたい。それがAI Wiseの原点です。</p>
-          <p><strong>世界と戦える町工場をつくる。</strong><br>そのために、製造業・建設業の現場に合ったAI活用を支援します。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <h2>まずは無料AI業務診断から</h2>
-        <p>報告書、議事録、データ整理、マニュアル作成など、今の業務のどこから改善すれば効果が出るかを一緒に整理します。</p>
-        <a class="btn" href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">LINEで無料診断を申し込む</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a href="/legal.html">特定商取引法に基づく表記</a>
-        <a href="mailto:beetnin854@gmail.com">お問い合わせ</a>
-        <a href="https://lin.ee/wFVwRAm" target="_blank" rel="noopener">LINE相談</a>
-      </div>
-      <div>© AI Wise. All Rights Reserved.</div>
+    <div class="hero-card">
+      <h3>こんな悩みを整理します</h3>
+      <ul>
+        <li>報告書・議事録・Excel集計に時間がかかる</li>
+        <li>会議や打合せが長く、決定事項が残らない</li>
+        <li>ベテランしか分からない作業が多い</li>
+        <li>AIを導入したいが何から始めればよいか分からない</li>
+      </ul>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section id="improvement" class="bg">
+  <div class="container">
+    <div class="section-label">IMPROVEMENT IMAGE</div>
+    <h2 class="section-title">改善イメージ</h2>
+    <p class="section-sub">まずは時間がかかる業務から改善。効果が見えた業務を横展開します。</p>
+    <div class="result-grid">
+      <div class="result"><b>報告書作成</b><span class="before">60分</span><span class="after">5〜10分</span></div>
+      <div class="result"><b>Excel集計</b><span class="before">60分</span><span class="after">5分</span></div>
+      <div class="result"><b>議事録作成</b><span class="before">90分</span><span class="after">10分</span></div>
+      <div class="result"><b>会議・打合せ</b><span class="before">60分</span><span class="after">30分へ</span></div>
+      <div class="result"><b>マニュアル作成</b><span class="before">半日</span><span class="after">30分</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-section" id="tabTop">
+  <div class="tabs-wrap">
+    <div class="container tabs">
+      <button class="tab-btn active" data-tab="corp" onclick="showTab('corp')">法人向け</button>
+      <button class="tab-btn" data-tab="personal" onclick="showTab('personal')">個人向け</button>
+      <button class="tab-btn" data-tab="flow" onclick="showTab('flow')">導入の流れ</button>
+      <button class="tab-btn" data-tab="line" onclick="showTab('line')">LINE診断</button>
+      <button class="tab-btn" data-tab="grareco" onclick="showTab('grareco')">AIグラレコ</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="corp" class="tab-panel active">
+      <div class="section-label">FOR BUSINESS</div>
+      <h2 class="section-title">法人向け｜現場が回るAI業務改善</h2>
+      <p class="section-sub">製造業・建設業・小規模事業者向けに、業務の見える化からAI活用、自動化、定着支援まで対応します。</p>
+      <div class="pain-grid">
+        <div class="pain">報告書・議事録・日報作成に時間がかかる</div>
+        <div class="pain">測定データやExcel転記が手作業になっている</div>
+        <div class="pain">会議の内容が決定事項に変わらない</div>
+        <div class="pain">属人化・マニュアル不足で教育に時間がかかる</div>
+      </div>
+      <div class="cards" style="margin-top:26px">
+        <article class="card"><h3>無料AI業務診断</h3><p>現状業務をヒアリングし、AIで改善できる業務を整理します。</p><div class="price">0円</div><ul><li>30分ヒアリング</li><li>改善ポイント整理</li><li>優先順位提案</li></ul></article>
+        <article class="card"><h3>AI業務改善スポット支援</h3><p>まず1つの業務を対象に、現場で使える形まで整えます。</p><div class="price">98,000円〜</div><ul><li>業務フロー設計</li><li>プロンプト・テンプレ作成</li><li>初期運用支援</li></ul></article>
+        <article class="card"><h3>継続支援プラン</h3><p>改善を一度きりで終わらせず、社内定着まで伴走します。</p><div class="price">29,800円/月〜</div><ul><li>月次改善相談</li><li>LINE相談</li><li>AI活用の横展開</li></ul></article>
+      </div>
+    </div>
+
+    <div id="personal" class="tab-panel">
+      <div class="section-label">FOR PERSONAL</div>
+      <h2 class="section-title">個人向け｜AIで仕事と発信を軽くする</h2>
+      <p class="section-sub">会社員・個人事業主・副業希望者向けに、AIの使い方、投稿作成、資料作成、日々の事務作業の時短を支援します。</p>
+      <div class="cards">
+        <article class="card"><h3>AI整理セッション</h3><p>やりたいこと・困っていることをAIで整理し、最初の一歩を決めます。</p><div class="price">5,000円〜</div><ul><li>30〜60分相談</li><li>AI活用テーマ整理</li><li>実行プラン作成</li></ul></article>
+        <article class="card"><h3>SNS・投稿AI化</h3><p>投稿ネタ、文章、構成、画像生成プロンプトを整えます。</p><div class="price">10,000円〜</div><ul><li>投稿テンプレ</li><li>プロフィール整理</li><li>投稿ネタ出し</li></ul></article>
+        <article class="card"><h3>事務作業AI化</h3><p>Excel・Googleスプレッドシート・資料作成を効率化します。</p><div class="price">30,000円〜</div><ul><li>Excel効率化</li><li>フォーム整理</li><li>簡易自動化案</li></ul></article>
+      </div>
+    </div>
+
+    <div id="flow" class="tab-panel">
+      <div class="section-label">FLOW</div>
+      <h2 class="section-title">導入の流れ</h2>
+      <p class="section-sub">LINE診断から始め、必要な方だけ個別相談へ進む流れです。</p>
+      <div class="flow">
+        <div class="step"><div class="step-num">1</div><strong>LINE登録</strong><p>無料診断フォームへ案内します。</p></div>
+        <div class="step"><div class="step-num">2</div><strong>業務診断</strong><p>困っている業務を整理します。</p></div>
+        <div class="step"><div class="step-num">3</div><strong>自動判定</strong><p>HOT/WARM/COLDに分類します。</p></div>
+        <div class="step"><div class="step-num">4</div><strong>提案</strong><p>必要な改善案を提示します。</p></div>
+        <div class="step"><div class="step-num">5</div><strong>実装・定着</strong><p>使える形まで伴走します。</p></div>
+      </div>
+    </div>
+
+    <div id="line" class="tab-panel">
+      <div class="section-label">LINE DIAGNOSIS</div>
+      <h2 class="section-title">LINE無料AI業務診断</h2>
+      <p class="section-sub">フォーム回答から自動で課題を整理し、HOT・WARM・COLD別に提案を出します。必要な方は個別相談につなげます。</p>
+      <div class="cards">
+        <article class="card"><h3>HOT</h3><p>すぐに改善したい方。個別相談へ案内します。</p><ul><li>当日〜翌日対応</li><li>改善優先順位</li><li>具体提案</li></ul></article>
+        <article class="card"><h3>WARM</h3><p>興味はあるが整理したい方。事例や改善案を送ります。</p><ul><li>AI活用事例</li><li>ミニ提案</li><li>導入前の整理</li></ul></article>
+        <article class="card"><h3>COLD</h3><p>まず知りたい方。初心者向け情報をLINEで届けます。</p><ul><li>AI小ネタ</li><li>無料資料</li><li>活用イメージ</li></ul></article>
+      </div>
+      <div style="text-align:center;margin-top:28px"><a class="btn line" href="https://lin.ee/y9G0Z7m" target="_blank" rel="noopener">LINEで無料診断を受ける</a></div>
+    </div>
+
+    <div id="grareco" class="tab-panel">
+      <div class="section-label">AI GRARECO</div>
+      <h2 class="section-title">AIグラレコ｜会議を仕事に変える可視化ツール</h2>
+      <p class="section-sub">会議・打合せの音声をもとに、キーワード、原因、課題、解決策、決定事項をリアルタイムに整理します。</p>
+      <div class="grareco-actions" style="justify-content:center">
+        <button class="btn" onclick="document.getElementById('grarecoDetail').scrollIntoView({behavior:'smooth',block:'start'})">AIグラレコ仕様を見る</button>
+        <button class="btn sub" onclick="document.getElementById('grarecoPreview').scrollIntoView({behavior:'smooth',block:'start'})">デモ画面を見る</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grareco-hero" id="grarecoDetail">
+  <div class="container">
+    <div class="section-label">AI GRARECO</div>
+    <h2>AIグラレコで、会議・打合せの時間を短縮</h2>
+    <p>目的を入力し、マイク録音・PC音声取得・音声ファイルから内容を整理。要約だけでなく、原因・課題・解決策・決定事項を見える化し、PNG保存やCSV出力まで対応します。</p>
+    <div class="grareco-actions">
+      <button class="btn" onclick="goTab('line')">AIグラレコを相談する</button>
+      <button class="btn sub" onclick="document.getElementById('grarecoPreview').scrollIntoView({behavior:'smooth',block:'start'})">時間短縮例を見る</button>
+    </div>
+  </div>
+</section>
+
+<section id="grarecoPreview" class="bg">
+  <div class="container">
+    <div class="section-label">DEMO IMAGE</div>
+    <h2 class="section-title">AIグラレコの画面イメージ</h2>
+    <div class="app-preview">
+      <div class="app-head">
+        <div class="app-title">AIグラレコ <small>画面音声・マイク・音声ファイル対応版</small></div>
+        <div class="app-buttons"><button class="mini-btn">API設定</button><button class="mini-btn">カテゴリ追加</button><button class="mini-btn">カテゴリ名称変更</button><button class="mini-btn">テーマ切替</button><button class="mini-btn">デモ再生</button><button class="mini-btn pink">クリア</button></div>
+      </div>
+      <div class="purpose"><b>目的</b><div class="purpose-box">不良率を下げる</div></div>
+      <div class="app-body">
+        <div class="board">
+          <div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div>
+          <div class="node main">不良率を下げる</div>
+          <div class="node blue n1">課題</div><div class="node blue n2">原因</div><div class="node blue n3">解決策</div><div class="node blue n4">決定</div>
+          <div class="node red n5">不良品が増えている</div><div class="node yellow n6">手順書が古い</div><div class="node green n7">写真付き手順書を作成</div><div class="node purple n8">AI工程から改善</div>
+        </div>
+        <aside class="summary">
+          <h3>要約</h3>
+          <div class="sum-card"><h4>目的</h4><ul><li>不良率を下げる</li></ul></div>
+          <div class="sum-card"><h4>要約</h4><ul><li>不良発生の原因を手順・教育・確認の3点で整理し、再発防止策を決定する。</li></ul></div>
+          <div class="sum-card"><h4>課題</h4><ul><li>不良品が増えている</li><li>新人の判断にバラつき</li><li>検査基準が曖昧</li></ul></div>
+          <div class="sum-card"><h4>原因</h4><ul><li>手順書が古い</li><li>教育が口頭中心</li></ul></div>
+        </aside>
+      </div>
+      <div class="app-foot"><div class="app-buttons"><button class="mini-btn">マイク録音</button><button class="mini-btn">PC音声取得</button><button class="mini-btn">音声ファイル</button><button class="mini-btn">PNG保存</button><button class="mini-btn">CSV出力</button></div><b>デモを表示しました</b></div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature"><b>会議時間短縮</b><p>論点を整理し、決定事項に集中できます。</p></div>
+      <div class="feature"><b>議事録作成を削減</b><p>要約・課題・決定をその場で整理します。</p></div>
+      <div class="feature"><b>原因と対策を見える化</b><p>抽象的な会話を改善アクションへ変えます。</p></div>
+      <div class="feature"><b>保存・共有</b><p>PNG保存・CSV出力で会議後の共有も簡単です。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>まずは無料AI業務診断から</h2>
+    <p>法人・個人どちらでも対応可能です。AIで何ができるか分からない段階でも、現状を整理するところから始められます。</p>
+    <a class="btn sub" href="https://lin.ee/y9G0Z7m" target="_blank" rel="noopener">LINEで無料診断を受ける</a><br>
+    <button class="law-link" onclick="openLaw()">特定商取引法に基づく表記</button>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-links"><button onclick="openLaw()">特定商取引法に基づく表記</button><a href="https://lin.ee/y9G0Z7m" target="_blank" rel="noopener">公式LINE</a></div>
+    <strong>AI Wise ／ 瀬川 友和</strong><br>AI業務改善・AIグラレコ・自動化サポート
+  </div>
+</footer>
+
+<div class="modal" id="lawModal">
+  <div class="modal-box">
+    <button class="btn dark" style="float:right;padding:10px 14px" onclick="closeLaw()">閉じる</button>
+    <h2>特定商取引法に基づく表記</h2>
+    <table class="law-table">
+      <tr><th>販売事業者</th><td>AI Wise</td></tr>
+      <tr><th>運営責任者</th><td>瀬川 友和</td></tr>
+      <tr><th>所在地</th><td>請求があった場合、遅滞なく開示します。</td></tr>
+      <tr><th>電話番号</th><td>請求があった場合、遅滞なく開示します。</td></tr>
+      <tr><th>メールアドレス</th><td>aiwise202602@gmail.com</td></tr>
+      <tr><th>販売価格</th><td>各サービスページまたは個別見積書に記載します。</td></tr>
+      <tr><th>商品代金以外の必要料金</th><td>銀行振込手数料、通信費等はお客様負担となります。</td></tr>
+      <tr><th>支払方法</th><td>銀行振込、クレジットカード決済等。</td></tr>
+      <tr><th>支払時期</th><td>申込時または請求書記載の期日まで。</td></tr>
+      <tr><th>サービス提供時期</th><td>決済確認後、個別に合意した日程で提供します。</td></tr>
+      <tr><th>キャンセル・返金</th><td>サービスの性質上、提供開始後の返金は原則としてお受けできません。提供前のキャンセルは個別に協議します。</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'))
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'))
+  document.getElementById(id).classList.add('active')
+  document.querySelectorAll('[data-tab="'+id+'"]').forEach(b=>b.classList.add('active'))
+  setTimeout(()=>document.getElementById('tabTop').scrollIntoView({behavior:'smooth',block:'start'}),30)
+}
+function goTab(id){showTab(id)}
+function openLaw(){document.getElementById('lawModal').classList.add('active')}
+function closeLaw(){document.getElementById('lawModal').classList.remove('active')}
+document.getElementById('lawModal').addEventListener('click',e=>{if(e.target.id==='lawModal')closeLaw()})
+</script>
 </body>
 </html>
